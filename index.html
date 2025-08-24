@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Малювалка — 7 кольорів + Гумка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="label" id="brushLabel">Товщина пензля: <b>6 px</b></div>
+      <div class="brush-controls">
+        <button id="decreaseBrush">−</button>
+        <button id="increaseBrush">+</button>
+      </div>
+      <div class="palette" role="listbox" aria-label="Палітра з 7 основних кольорів" style="display:flex; gap:8px;">
+        <button class="swatch" data-color="#000000" style="background:#000000" aria-label="Чорний" aria-current="true"></button>
+        <button class="swatch" data-color="#e11d48" style="background:#e11d48" aria-label="Червоний"></button>
+        <button class="swatch" data-color="#f97316" style="background:#f97316" aria-label="Помаранчевий"></button>
+        <button class="swatch" data-color="#facc15" style="background:#facc15" aria-label="Жовтий"></button>
+        <button class="swatch" data-color="#22c55e" style="background:#22c55e" aria-label="Зелений"></button>
+        <button class="swatch" data-color="#3b82f6" style="background:#3b82f6" aria-label="Синій"></button>
+        <button class="swatch" data-color="#8b5cf6" style="background:#8b5cf6" aria-label="Фіолетовий"></button>
+      </div>
+      <button id="eraserBtn" class="eraser-btn" title="Гумка">🩹</button>
+    </div>
+    <div class="stage">
+      <canvas id="board" aria-label="Полотно для малювання"></canvas>
+      <div class="actions">
+        <button id="clearBtn">Очистити</button>
+        <button id="saveBtn">Зберегти</button>
+      </div>
+    </div>
+<script src="script.js"></script>
+  
+</body>
+</html>
+
+
+

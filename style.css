@@ -1,0 +1,64 @@
+:root { --palette-h: 72px; }
+    html, body { height: 100%; margin: 0; }
+    body { background:#111; color:#eee; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+    .wrap { position: fixed; inset: 0; display: grid; grid-template-rows: var(--palette-h) 1fr; }
+    .stage { position: relative; background: #fff; }
+    canvas { display:block; width:100%; height:100%; touch-action: none; }
+    .topbar { display:flex; align-items:center; flex-wrap: wrap; gap:14px; padding:10px 14px; background:#0d0d0d; box-shadow: 0 4px 20px rgba(0,0,0,.35); }
+    .label { background: #00000080; color:#fff; border-radius: 12px; padding: 6px 10px; font-size: 13px; letter-spacing:.2px; backdrop-filter: blur(6px); min-width: 160px; }
+    .swatch { width:34px; height:34px; border-radius:10px; border:3px solid #fff; cursor:pointer; outline:none; box-shadow: 0 0 6px rgba(0,0,0,0.6); transition: transform .12s ease, box-shadow .12s ease; position:relative; }
+    .swatch:active { transform: scale(.95); }
+    .swatch[aria-current="true"] { box-shadow: 0 0 0 3px #fff8, 0 0 6px rgba(0,0,0,0.6); }
+    .swatch:hover::after {
+      content: attr(aria-label);
+      position: absolute;
+      bottom: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000a;
+      color: #fff;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .brush-controls { display:flex; align-items:center; gap:6px; }
+    .brush-controls button {
+      padding:4px 10px;
+      border:none;
+      border-radius:8px;
+      background:#222;
+      color:#fff;
+      font-size:16px;
+      cursor:pointer;
+      transition: background .2s;
+    }
+    .brush-controls button:hover { background:#333; }
+    .eraser-btn {
+      padding:6px 12px;
+      border:none;
+      border-radius:8px;
+      background:#444;
+      color:#fff;
+      cursor:pointer;
+      font-size:18px;
+      transition: background .2s;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .eraser-btn.active { background:#e11d48; }
+    .eraser-btn:hover { background:#666; }
+    .actions { position: fixed; bottom: 10px; right: 10px; display:flex; gap:10px; padding:10px; }
+    .actions button { padding:8px 14px; border:none; border-radius:10px; cursor:pointer; font-size:14px; background:#222; color:#fff; transition: background .2s; }
+    .actions button:hover { background:#333; }
+    /* Адаптивність */
+    @media (max-width: 768px) {
+      .menu { flex-direction: column; }
+      .prev { left: 10px; }
+      .next { right: 10px; }
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 1.3rem; }
+      .gallery { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    }
