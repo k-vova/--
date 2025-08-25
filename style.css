@@ -1,4 +1,4 @@
-:root { --palette-h: 140px; }
+:root { --palette-h: 145px; }
     html, body { height: 100%; margin: 0; }
     body { background:#111; color:#eee; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
     .wrap { position: fixed; inset: 0; display: grid; grid-template-rows: var(--palette-h) 1fr; }
@@ -63,4 +63,5 @@
       .gallery { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 
     }
+
 
